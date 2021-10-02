@@ -21,7 +21,7 @@ func randomHandler(w http.ResponseWriter, r *http.Request) {
 	rand.Seed(time.Now().UnixNano())
     min := 1
     max := 100
-	fmt.Fprintf(w, strconv.FormatInt( rand.Intn(max - min + 1) + min , 10 )) 
+	fmt.Fprintf( w, strconv.Itoa( rand.Intn(max - min + 1) + min ) ) 
 }
 
 func main() {
