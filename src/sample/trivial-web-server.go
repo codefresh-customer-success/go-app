@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"net/http"
 	"math/rand"
+	"time"
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
@@ -16,9 +18,10 @@ func healthzHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func randomHandler(w http.ResponseWriter, r *http.Request) {
-    min := 0
+	rand.Seed(time.Now().UnixNano())
+    min := 1
     max := 100
-	fmt.Fprintf(w, rand.Intn(max - min) + min)
+	fmt.Fprintf(w, strconv.FormatInt( rand.Intn(max - min + 1) + min , 10 )) 
 }
 
 func main() {
