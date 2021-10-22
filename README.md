@@ -1,2 +1,2 @@
 # go-app
-Simple Go App
+Simple Go App.
