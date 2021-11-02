@@ -19,8 +19,8 @@ func healthzHandler(w http.ResponseWriter, r *http.Request) {
 
 func randomHandler(w http.ResponseWriter, r *http.Request) {
 	rand.Seed(time.Now().UnixNano())
-    min := 40
-    max := 80
+    min := 20
+    max := 70
 	fmt.Fprintf( w, strconv.Itoa( rand.Intn(max - min + 1) + min ) ) 
 }
 
